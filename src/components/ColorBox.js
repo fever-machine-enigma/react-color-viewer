@@ -1,10 +1,17 @@
 import React from "react";
 import "../styles/colorBox.css";
 
-export const ColorBox = () => {
+export const ColorBox = ({ newColor, setNewColor }) => {
   return (
     <div>
-      <input type="text" placeholder="ex. Aqua" />
+      <input
+        autoFocus
+        type="text"
+        placeholder="ex. Aqua, rgb(0,0,0), #111abc"
+        onChange={(e) => setNewColor(e.target.value)}
+        required
+        value={newColor}
+      />
     </div>
   );
 };
